@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class RectangleCoordinates {
+
+    public static void main(String[] args) {
+        Scanner user_input = new Scanner( System.in );
+        System.out.println(" Rectangle Finder");
+        
+        double NW1; 
+            System.out.print("NW x-value:");
+            NW1 = user_input.nextInt();
+        
+        double NW2;   
+            System.out.print("NW y-value:");
+            NW2 = user_input.nextInt();
+
+        double NE1;   
+            System.out.print("NE x-vlaue:");
+            NE1 = user_input.nextInt();
+            
+        double NE2;
+            System.out.print("NE y-value:");
+            NE2 = user_input.nextInt();
+            
+        double SW1;    
+            System.out.print("SW x-value:");
+            SW1 = user_input.nextInt();
+            
+        double SW2; 
+            System.out.print("SW y-value:");
+            SW2 = user_input.nextInt();
+            
+        double SE1;    
+            System.out.print("SE x-value:");
+            SE1 = user_input.nextInt();
+            
+        double SE2;
+            System.out.print("SE y-value:");
+            SE2 = user_input.nextInt();
+            
+        double Distance1;
+         Distance1 = (Math.sqrt(Math.pow(NE2-NW2, 2) + Math.pow(NE1-NW1, 2)));
+            
+        double Distance2;
+        Distance2 = (Math.sqrt(Math.pow(SE2-SW2, 2) + Math.pow(SE1-SW1, 2)));
+        
+        double Distance3;
+        Distance3 = (Math.sqrt(Math.pow(NE2-SE2, 2) + Math.pow(NE1-SE1, 2)));
+        
+        double Distance4;
+        Distance4 = (Math.sqrt(Math.pow(NW2-SW2, 2) + Math.pow(NW1-SW1, 2)));
+    
+        System.out.println(Distance1);
+        System.out.println(Distance2);
+        System.out.println(Distance3);
+        System.out.println(Distance4);
+        
+        if((Distance1 == Distance2) && (Distance3 == Distance4)) {
+        System.out.println("Hooray! This is an actual rectangle.");
+            
+        double Area;
+        Area = Distance2*Distance3;
+            System.out.println("Area:" + Area);
+
+        double Perimeter; 
+        Perimeter = Distance1+Distance2+Distance3+Distance4;
+            System.out.println("Perimeter:" + Perimeter);
+        }
+        else  {
+            System.out.println("Unfortunately this is not an actual rectangle. Please try again.");
+       
+        }
+    
+    }
+    
+}       
